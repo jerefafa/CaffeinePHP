@@ -1,4 +1,7 @@
 <?php
+        namespace DatabaseConnection;
+        use ENV\Environment;
+        use \PDO;
         class DBCon
         {
             private $env;

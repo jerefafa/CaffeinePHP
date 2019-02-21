@@ -14,7 +14,8 @@
     "classmap": [
       "app",
       "core",
-      "environment.php"
+      "environment.php",
+      "background"
     ]
   }
 }
