@@ -1,6 +1,12 @@
 {
   "name": "CaffeinePHP",
   "description": "MVC PHP Framework",
+  "authors": [
+    {
+      "name": "Jeremiah T. Malicdem",
+      "email": "jmalicdem45@gmail.com"
+    }
+  ],
   "require": {
     "guzzlehttp/guzzle": "~6.0"
   },

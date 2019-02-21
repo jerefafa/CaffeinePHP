@@ -1,5 +1,6 @@
 <?php
-     class Environment {
+    namespace ENV;
+        class Environment {
          /**
           * @var string Host
           */
