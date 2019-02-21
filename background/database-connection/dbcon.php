@@ -21,7 +21,7 @@
 
             public function getDatabaseConnection()
             {
-                return 'asd';
+                return $instance;
             }
         }
 
