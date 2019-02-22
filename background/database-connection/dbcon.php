@@ -5,26 +5,23 @@
         class DBCon
         {
             private $env;
-            public $db;
-            private static $instance;
-            function __construct()
-            {
+            private $db;
+            public function __construct()
+            {              
+                try{
                 $this->env = Environment::getInstance();
-                $this->db = new PDO("mysql:host='" . $this->env->getHost() . "';dbname='" . $this->env->getDatabase() . "'",
+                $this->db = new PDO("mysql:host=" . $this->env->getHost() .";dbname=".$this->env->getDatabase(),
                     $this->env->getUsername(),
-                    $this->env->getPassword());
-            }
-
-            public static function getInstance() {
-                if(self::$instance === null) {
-                    self::$instance = new self();
+                    $this->env->getPassword());    
+                    $this->env->getPassword();       
+                    $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+                } catch(PDOException $e) {
+                    echo 'asd';
                 }
-                return self::$instance;
             }
 
-            public function getDatabaseConnection()
-            {
-                return $instance;
+            public function getConnection() {
+                return $this->db;
             }
         }
 

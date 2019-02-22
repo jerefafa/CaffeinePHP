@@ -1,6 +1,12 @@
 <?php
     require_once __DIR__ . '/vendor/autoload.php';
-    use ENV\Environment;
     use DatabaseConnection\DBCon;
-    $instance2 = new DBCon();
-    echo json_encode($instance2->getDatabaseConnection());
+    use Errors\ErrorHandler;
+
+    try{
+        $instance2 = new DBCon();
+    } catch(PDOException $e) {
+        $err = ErrorHandler::getInstance();
+        $err->setMessage($e->getMessage());
+        header("Location:core/errors/error-message.php");
+    }

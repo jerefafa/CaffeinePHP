@@ -4,7 +4,7 @@
          /**
           * @var string Host
           */
-         private $host = '127.0.0.1';
+         private $host = '127.0.0.';
 
          /**
           * @var string Host Username
