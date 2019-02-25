@@ -1,6 +1,6 @@
 <?php
     namespace Session;
-
+    session_start();
         class SessionHandler {
 
             public static function getInstance() {
@@ -12,16 +12,14 @@
              * Constructor
              */
             public function __construct()
-            {
-                session_start();
-            }
+            { }
 
             /**
              * @param $key
              * @param $item
              * Sets the session by key and item
              */
-            public function set($key, $item) {
+            public static function set($key, $item) {
                 $_SESSION[$key] = $item;
                 return;
             }
@@ -31,7 +29,7 @@
              * @return mixed
              * returns the session by key
              */
-            public function get($key) {
+            public static function get($key) {
                 return $_SESSION[$key];
             }
 
@@ -39,7 +37,7 @@
              * @param $key
              * removing a specific session
              */
-            public function removeSession($key) {
+            public static function removeSession($key) {
                 unset($_SESSION[$key]);
                 return;
             }
@@ -47,7 +45,7 @@
             /**
              * destroys all session
              */
-            public function removeAllSession() {
+            public static function removeAllSession() {
                 session_destroy();
                 return;
             }

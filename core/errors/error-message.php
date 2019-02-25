@@ -1,4 +1,5 @@
 <?php
+    require_once "../../vendor/autoload.php";
     use Errors\ErrorHandler;
     $errorHandler = new ErrorHandler();
 ?>
@@ -14,7 +15,6 @@
                 <h1 class="btn-outline-danger">ERROR!!</h1>
                 <div class="bg-warning">
             <?php
-            error_reporting(0);
                 if($errorHandler->getMessage() === "" ) {
                     echo "Undefined Error";
                 }
