@@ -1,24 +1,18 @@
 <?php
     namespace Errors;
+    use Session\SessionHandler;
         class ErrorHandler {
-            private static $instance;
-            private $errorMessage = "";
-
-            private function __construct() {}
-            
-                public static function getInstance() {
-                    if(self::$instance === null) {
-                        self::$instance = new self();
-                    }
-                    return self::$instance;
-                 }
+            private $session;
+                public function __construct() {
+                    $this->session = SessionHandler::getInstance();
+                }
 
                  public function setMessage($message) {
-                     $this->errorMessage = $message;
+                     $this->session->set("ErrorMessage7416853ds1gv53", $message);
                  }
 
                  public function getMessage() {
-                     return $this->errorMessage;
+                     return $this->session->get("ErrorMessage7416853ds1gv53");
                  }
                 
         }

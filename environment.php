@@ -14,12 +14,12 @@
          /**
           * @var string Host Password
           */
-         private $password = 'root';
+         private $password = '';
 
          /**
           * @var string Database Name
           */
-         private $database = 'configurator';
+         private $database = 'new-nuls';
 
          /**
           * Do not edit beyond this comment
